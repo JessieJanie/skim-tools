@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "skim": {
+      "command": "npx",
+      "args": ["-y", "skim-mcp"],
+      "env": {
+        "SKIM_WALLET_PRIVATE_KEY": "0xYOUR_BASE_WALLET_PRIVATE_KEY"
+      }
+    }
+  }
+}
