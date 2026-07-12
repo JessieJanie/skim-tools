@@ -40,6 +40,12 @@ Also available: `GET /api/v2/read?url=...` ($0.002), `GET /api/v2/read/js?url=..
 (JavaScript-rendered, $0.005), and `POST /api/v2/extract` (typed JSON via your
 JSON Schema, $0.015). Full docs: <https://skim402.com/docs>.
 
+## Starter agent prompt
+
+Want your agent to actually reach for Skim at the right moments? Copy the
+system prompt in [`STARTER_PROMPT.md`](./STARTER_PROMPT.md) — it tells the
+agent when to read a page, how to handle thin results, and what not to do.
+
 ## Examples
 
 Runnable snippets for each path are in [`examples/`](./examples):
