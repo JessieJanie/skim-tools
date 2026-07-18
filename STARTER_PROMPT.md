@@ -35,7 +35,13 @@ Rules:
 - Do not re-read the same URL twice in one task; reuse the first result.
 - Reads that fail are not charged, so a failed read costs nothing — but do
   not retry the same failing URL more than once.
-- When you quote or summarize a page, cite the URL you read.
+- Skim follows redirects. The response includes finalUrl — if it differs
+  from the URL you requested, you were redirected; cite finalUrl, and check
+  metadata.title to confirm you got the page you expected.
+- Large pages return large Markdown (tens of thousands of characters). Check
+  metadata and the opening section first before consuming the whole result.
+- When you quote or summarize a page, cite the URL you actually read
+  (finalUrl).
 ```
 
 ## Trying it out
