@@ -18,28 +18,19 @@ USDC on Base**, paid automatically over HTTP 402 — no signup, no API key.
 | CrewAI | `pip install crewai-skim` | [crewai-skim on PyPI](https://pypi.org/project/crewai-skim/) |
 | LlamaIndex | `pip install llama-index-readers-skim` | [llama-index-readers-skim on PyPI](https://pypi.org/project/llama-index-readers-skim/) |
 | Haystack | `pip install skim-haystack` | [skim-haystack on PyPI](https://pypi.org/project/skim-haystack/) |
+| Mastra (TypeScript) | `npm install mastra-skim` | [mastra-skim on npm](https://www.npmjs.com/package/mastra-skim) |
 | Coinbase agentic wallet | `npx awal x402 pay ...` | [agentic-wallet-skills](https://github.com/coinbase/agentic-wallet-skills) |
-| Plain JavaScript | `npm install x402-axios@1.2.0 viem axios` | [examples/js-x402-axios.mjs](./examples/js-x402-axios.mjs) |
+| Plain JavaScript | `npm install x402-axios viem axios` | [examples/js-x402-axios.mjs](./examples/js-x402-axios.mjs) |
 | Plain Python | `pip install 'x402[evm]' requests eth-account` | [examples/python-x402.py](./examples/python-x402.py) |
 | Just curl | — | [examples/curl-402.sh](./examples/curl-402.sh) |
 
-> Note: pin `x402-axios@1.2.0` for now. The 1.2.1 release declares a
-> dependency on `x402@^1.2.1`, which is not published yet, so a plain
-> `npm install x402-axios` fails. 1.2.0 works.
-
 Every integration needs the same single credential: a Base wallet funded with
 a little USDC, supplied as the `SKIM_WALLET_PRIVATE_KEY` environment variable.
-The name is a convention, not a requirement — every code client also accepts
-a programmatically constructed account (for example, pass any viem account to
-`withPaymentInterceptor`), so use whatever env var name fits your project.
 $1 funds roughly 500 reads. Wallet setup walkthrough:
 <https://skim402.com/wallet>.
 
 **Use a fresh, dedicated wallet — never your personal one.** The key signs
 $0.002 payment authorizations locally; treat it like a hot wallet for tolls.
-Keep only a small balance in it, and add your own per-call price ceiling in
-code clients (the MCP server has `SKIM_MAX_PRICE_USD` built in; the JS and
-Python examples below show the equivalent pre-flight check).
 
 ## The API in one paragraph
 
@@ -67,6 +58,7 @@ Runnable snippets for each path are in [`examples/`](./examples):
 - [`crewai_example.py`](./examples/crewai_example.py)
 - [`llamaindex_example.py`](./examples/llamaindex_example.py)
 - [`haystack_example.py`](./examples/haystack_example.py)
+- [`mastra_example.ts`](./examples/mastra_example.ts)
 - [`mcp-config.json`](./examples/mcp-config.json) — drop-in MCP client config
 
 ## Official listings
